@@ -262,6 +262,7 @@ jobs:
                 name: Run unit tests
                 command: |
                   conda activate kedro_plugins
+                  echo "Running build kedro datasets: <<pipeline.parameters.run-build-kedro-datasets>> <<parameters.plugin>>"
                   cd <<parameters.plugin>>
                   pytest tests
 
@@ -288,7 +289,9 @@ jobs:
           steps:
             - run:
                 name: Run unit tests without spark in parallel
-                command: conda activate kedro_plugins; make test-no-spark
+                command: |
+                  echo "Running build kedro datasets: <<pipeline.parameters.run-build-kedro-datasets>> <<parameters.plugin>>"
+                  conda activate kedro_plugins; make test-no-spark
       - when:
           condition:
             and:
