@@ -25,6 +25,7 @@ class SparkHiveDataSet(AbstractDataSet[DataFrame, DataFrame]):
     to external changes to the target table while executing.
     Upsert methodology works by leveraging Spark DataFrame execution plan checkpointing.
 
+
     Example usage for the
     `YAML API <https://kedro.readthedocs.io/en/stable/data/\
     data_catalog.html#use-the-data-catalog-with-the-yaml-api>`_:
